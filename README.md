@@ -74,6 +74,12 @@ Please cite LightFM if it helps your research. You can use the following BibTeX 
 }
 ```
 
+## EZ Install
+1. Make sure Python has been reinstalled since the last time OSX was updated
+2. `brew install llvm`
+3. add llvm to path `echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc`
+4. `pip install -e "git+https://github.com/ranker-dev/lightfm#egg=lightfm"`
+
 ## Development
 Pull requests are welcome. To install for development:
 
