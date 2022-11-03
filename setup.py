@@ -124,7 +124,8 @@ class Cythonize(Command):
                     ["lightfm/_lightfm_fast_openmp.pyx"],
                     extra_link_args=["-fopenmp"],
                 ),
-            ]
+            ],
+						compiler_directives={'language_level' : "3"}
         )
 
 
@@ -150,9 +151,7 @@ class Clean(Command):
         subprocess.call(["rm", os.path.join(pth, "lightfm", "_lightfm_fast.so")])
 
 
-use_openmp = not sys.platform.startswith("darwin") and not sys.platform.startswith(
-    "win"
-)
+use_openmp = True
 
 long_description = pathlib.Path(__file__).parent.joinpath("README.md").read_text()
 

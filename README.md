@@ -78,14 +78,12 @@ Please cite LightFM if it helps your research. You can use the following BibTeX 
 Pull requests are welcome. To install for development:
 
 1. Clone the repository: `git clone git@github.com:lyst/lightfm.git`
-2. Setup a virtual environment: `cd lightfm && python3 -m venv venv && source ./venv/bin/activate`
-3. Install it for development using pip: `pip install -e . && pip install -r test-requirements.txt`
-4. You can run tests by running `./venv/bin/py.test tests`.
-5. LightFM uses [black](https://github.com/ambv/black) to enforce code formatting and flake8 for linting, see `lint-requirements.txt`.
-6. [Optional]: You can install pre-commit to locally enfore formatting and linting. Install with:
-    ```bash
-    pip install pre-commit
-    pre-commit install
-    ```
+2. Make sure Python has been reinstalled since the last time OSX was updated
+3. `brew install llvm`
+4. add llvm to path `echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc`
+5. Setup a virtual environment: `python3 -m venv venv && source ./venv/bin/activate && cd lightfm`
+6. Install it for development using pip: `pip install -e . && pip install -r test-requirements.txt`
+7. You can run tests by running `../venv/bin/py.test tests`.
+8. If you want to install it in a different project: `pip install -e {LIGHT_FM_DIRECTORY}` like `pip install -e ../lightfm` if it's in the parent directory
 
 When making changes to the `.pyx` extension files, you'll need to run `python setup.py cythonize` in order to produce the extension `.c` files before running `pip install -e .`.
